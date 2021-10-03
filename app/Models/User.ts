@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, HasOne, hasOne } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, HasMany, hasMany, HasOne, hasOne } from '@ioc:Adonis/Lucid/Orm'
 import Profile from './Profile'
+import Product from './Product'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -20,4 +21,7 @@ export default class User extends BaseModel {
 
   @hasOne(() => Profile)
   public profile: HasOne<typeof Profile>
+
+  @hasMany(() => Product)
+  public products: HasMany<typeof Product>
 }

@@ -3,7 +3,7 @@ import User from 'App/Models/User'
 
 export default class UsersController {
   public async index ({}: HttpContextContract) {
-    return User.query().preload('profile')
+    return User.query().preload('profile').preload('products')
   }
 
   public async store ({request, response}: HttpContextContract) {
