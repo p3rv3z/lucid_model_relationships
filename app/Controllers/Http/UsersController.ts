@@ -9,7 +9,8 @@ export default class UsersController {
   public async store ({request, response}: HttpContextContract) {
     const payload = {
       name: request.input('name'),
-      email: request.input('email')
+      email: request.input('email'),
+      city_id: request.input('city_id')
     }
 
     const user = await User.create(payload)

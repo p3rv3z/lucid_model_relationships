@@ -9,7 +9,7 @@ export default class ProfilesController {
   public async store({ request, response }: HttpContextContract) {
     const payload = {
       date_of_birth: request.input('date_of_birth'),
-      city: request.input('city'),
+      address: request.input('address'),
       user_id: request.input('user_id'),
     }
 

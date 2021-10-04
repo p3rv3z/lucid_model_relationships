@@ -8,6 +8,13 @@ export default class Users extends BaseSchema {
       table.increments('id').primary()
       table.string('name')
       table.string('email')
+      table.integer('city_id').unsigned().nullable()
+      table
+        .foreign('city_id')
+        .references('cities.id')
+        .onUpdate('cascade')
+        .onDelete('set null')
+
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })

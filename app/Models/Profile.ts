@@ -10,7 +10,7 @@ export default class Profile extends BaseModel {
   public date_of_birth: DateTime
 
   @column()
-  public city: string
+  public address: string
 
   @column()
   public userId: number

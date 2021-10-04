@@ -24,6 +24,7 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
+Route.resource('cities', 'CitiesController')
 Route.resource('users', 'UsersController')
 Route.resource('profiles', 'ProfilesController')
 Route.resource('products', 'ProductsController')
